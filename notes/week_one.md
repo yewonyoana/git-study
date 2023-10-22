@@ -71,7 +71,7 @@
     2. Tracked 파일을 수정하면 Modified
     3. Modified 된 파일을 git add 명령어로 Staged 상태로 만듬
     4. Commit을 하게되면 Staged 상태에서 Unmodified 상태로 돌아감
-    5. 2번 ~ 4번 반복
+    5. (a) ~ (d) 반복
 
 - **Staging Area**
 
