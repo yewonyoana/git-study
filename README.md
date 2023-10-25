@@ -8,7 +8,7 @@
 
 ---
 
-### Week 1:
+### [Week 1](https://github.com/yewonyoana/git-study/blob/4bb19230dc53ac534499570417a19cdf75fc5c52/week_one.md):
 
 - Git & GitHub
 - Repositories
@@ -17,7 +17,7 @@
 - Branches
 - Branch Conflict
 
-### Week 2:
+### [Week 2](https://github.com/yewonyoana/git-study/blob/4bb19230dc53ac534499570417a19cdf75fc5c52/week_two.md):
 
 - GitHub
 - Forking
