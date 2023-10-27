@@ -109,11 +109,11 @@ _파일을 수정하고 커밋을 했으면 꼭 푸쉬를 해서 깃헙에 올�
 
 ### Pull Requests
 
-- 복사한 저장소를 수정한 후 베이스 저장소에 수정 사항을 당겨오는 것
-  - 반드시 베이스 저장소에 Pull Request를 넣어야함
-
 **[How to Pull Request?](/pull_request.md)**
 **[Video](https://nomadcoders.co/git-for-beginners/lectures/2042)**
+
+- 복사한 저장소를 수정한 후 베이스 저장소에 수정 사항을 당겨오는 것
+  - 반드시 베이스 저장소에 Pull Request를 넣어야함
 
 ---
 
