@@ -2,14 +2,15 @@
 
 ### Git vs. GitHub
 
-- **Git**
+#### Git
 
-  - DVSC (Distributed Version Control Systems, 분산 버전 관리 시스템)
-  - 데이터를 스냅샷(커밋)의 스트림으로 취급
-    - 파일을 커밋했을 때, 해당 파일 스냅샷의 레퍼런스를 저장
+- DVSC (Distributed Version Control Systems, 분산 버전 관리 시스템)
+- 데이터를 스냅샷(커밋)의 스트림으로 취급
+  - 파일을 커밋했을 때, 해당 파일 스냅샷의 레퍼런스를 저장
 
-- **GitHub**
-  - 개발자들 사이에서 소스 코드의 버전을 관리, 공유, 협업하는 데 사용되는 툴
+#### GitHub
+
+- 개발자들 사이에서 소스 코드의 버전을 관리, 공유, 협업하는 데 사용되는 툴
 
 ---
 
@@ -22,23 +23,23 @@
 
   - 외부서버(ex. 깃허브)에 저장된 깃 저장소
 
-- #### Repository 만들기
+#### Repository 만들기
 
-  - 기존 디렉토리를 깃 저장소로 만들기
+- 기존 디렉토리를 깃 저장소로 만들기
 
-    1.  .git이라는 하위 디렉토리를 만들기
-        - `git init`
-          - 저장소에 필요한 뼈대 파일 (skeleton)이 들어있음
-          - 아직 어떤 파일도 관리하고 있지 않음
-    2.  파일을 저장소에 추가
-        - `git add .` or `git add file`
-    3.  커밋으로 파일을 관리하기
-        - `git commit -m "message"`
+  1.  .git이라는 하위 디렉토리를 만들기
+      - `git init`
+        - 저장소에 필요한 뼈대 파일 (skeleton)이 들어있음
+        - 아직 어떤 파일도 관리하고 있지 않음
+  2.  파일을 저장소에 추가
+      - `git add .` or `git add file`
+  3.  커밋으로 파일을 관리하기
+      - `git commit -m "message"`
 
-  - 기존 저장소를 Clone (복제)하기
-    - 프로젝트 히스토리를 포함한 모든 데이터를 복제
-      - `git clone url` or `git clone url name`
-        - `url` 뒤에 `name`이 있을 경우, 디렉토리 이름이 지정한 `name`으로 복제
+- 기존 저장소를 Clone (복제)하기
+  - 프로젝트 히스토리를 포함한 모든 데이터를 복제
+    - `git clone url` or `git clone url name`
+      - `url` 뒤에 `name`이 있을 경우, 디렉토리 이름이 지정한 `name`으로 복제
 
 ---
 
@@ -50,35 +51,36 @@
 
 ### Git Areas (Git Workflow, 작업 환경)
 
-- **Working Directory (Working Area, Unstaged Area)**
+#### Working Directory (Working Area, Unstaged Area)
 
-  - 현재 개발자가 작업하고 있는 폴더가 있는 디렉토리 (ex. VSCode)
-  - 파일 상태:
+- 현재 개발자가 작업하고 있는 폴더가 있는 디렉토리 (ex. VSCode)
+- 파일 상태:
 
-    - Tracked (관리 대상): 깃이 이미 주시하고 있는 파일
-      - Unmodified: 커밋한 파일
-      - Modified: 커밋한 파일을 수정했을 때
-      - Staged: 커밋으로 저장소에 기록 준비
-    - Untracked (비관리 대상): 새로 만들어진 파일로 깃이 아직 주시하고 있지 않음
+  - Tracked (관리 대상): 깃이 이미 주시하고 있는 파일
+    - Unmodified: 커밋한 파일
+    - Modified: 커밋한 파일을 수정했을 때
+    - Staged: 커밋으로 저장소에 기록 준비
+  - Untracked (비관리 대상): 새로 만들어진 파일로 깃이 아직 주시하고 있지 않음
 
-      ✔︎ `git status`로 파일의 상태를 확인 할 수 있음
+    ✔︎ `git status`로 파일의 상태를 확인 할 수 있음
 
-    **[라이프사이클](https://ordo.tistory.com/133)**
+  **[라이프사이클](https://ordo.tistory.com/133)**
 
-    ![](https://git-scm.com/book/en/v2/images/lifecycle.png)
+  <img src="https://git-scm.com/book/en/v2/images/lifecycle.png" width="500">
 
-    1. Untracked 파일을 git add 명령어로 Staged 상태로 만듬
-    2. Tracked 파일을 수정하면 Modified
-    3. Modified 된 파일을 git add 명령어로 Staged 상태로 만듬
-    4. Commit을 하게되면 Staged 상태에서 Unmodified 상태로 돌아감
-    5. (a) ~ (d) 반복
+  1. Untracked 파일을 git add 명령어로 Staged 상태로 만듬
+  2. Tracked 파일을 수정하면 Modified
+  3. Modified 된 파일을 git add 명령어로 Staged 상태로 만듬
+  4. Commit을 하게되면 Staged 상태에서 Unmodified 상태로 돌아감
+  5. (a) ~ (d) 반복
 
-- **Staging Area**
+#### Staging Area
 
-  - 커밋할 준비가 되어있는 파일을 옮겨두는 곳
+- 커밋할 준비가 되어있는 파일을 옮겨두는 곳
 
-- **Git Directory (Repository Area)**
-  - 파일들이 커밋된 곳으로 스냅샷을 가지고 있는 곳
+#### Git Directory (Repository Area)
+
+- 파일들이 커밋된 곳으로 스냅샷을 가지고 있는 곳
 
 ---
 
@@ -113,33 +115,46 @@
 
 1. 작업 진행하면서 이슈가 생겼을 때 이슈를 처리할 새 브랜치를 생성
    - 53번 이슈 발생하여 `git checkout -b iss53` ( = `git branch iss53` + `git checkout iss53`) 으로 이슈를 처리할 브랜치 생성 및 체크아웃
-     ![](https://git-scm.com/book/en/v2/images/basic-branching-2.png)
+     <img src="https://git-scm.com/book/en/v2/images/basic-branching-2.png" width="500">
 2. 해당 브랜츠에서 이슈를 해결
    - 53번 이슈를 `checkout` 했기 때문에 `head`가 `iss53`를 가리킴으로 커밋을 했을 때 `iss53` 브랜치 앞으로 나아감
-     ![](https://git-scm.com/book/en/v2/images/basic-branching-3.png)
+     <img src="https://git-scm.com/book/en/v2/images/basic-branching-3.png" width="500">
 3. 커밋 후 main 브랜치로 전환 (merge 아님 주의!)
    - `git checkout main`
      - 워킹 디렉토리는 53번 이슈 시작 전 모습으로 돌려지기에 새로운 문제 집중할 수 있는 환경이 만들어짐
      - ❕깃은 자동으로 워킹 디렉토리에 파일을 추가하고, 지우고, 수정해서 체크아웃한 브랜치의 마지막 스냅샷으로 돌려놓음
 4. 해결해되는 핫픽스가 등장
+
    - 핫픽스 해결용 브랜치를 생성 `git checkout -b hotfix`
-     ![](https://git-scm.com/book/en/v2/images/basic-branching-4.png)
+
+   <img src="https://git-scm.com/book/en/v2/images/basic-branching-4.png" width="500">
+
 5. 핫픽스 해결 후 main과 merge
+
    - `git checkout main` 으로 먼저 메인을 체크아웃
    - `git merge hotfix` 로 메인에 핫픽스를 합치기
-     ![](https://git-scm.com/book/en/v2/images/basic-branching-5.png)
+
+   <img src="https://git-scm.com/book/en/v2/images/basic-branching-5.png" width="500">
+     
      - C4 커밋이 C2 커밋에 기반한 브랜치이기 때문에 브랜치 포인터는 머지 과정 없이 최신 커밋으로 이동 → **Fast Forward Merge**
+
 6. 핫픽스 브랜치 삭제
    - `git branch -d hotfix`
 7. 53번 이슈 브랜치와 메인 브랜치 merge
 
 - `main`이 `checkout`인 상태에서 `git merge iss53`
+
   - 현재 merge하려는 `main`과 `iss53`의 조상이 같지 않음으로 `fast forward merge`를 사용하지 않음
-    ![](https://git-scm.com/book/en/v2/images/basic-merging-1.png)
+
+    <img src="https://git-scm.com/book/en/v2/images/basic-merging-1.png" width="500">
+
   - `main`과 `iss53` 그리고 공통된 조상 하나를 사용해서 **3-Way Merge**를 사용
-    ![](https://git-scm.com/book/en/v2/images/basic-merging-2.png)
+
+    <img src="https://git-scm.com/book/en/v2/images/basic-merging-2.png" width="500">
+
   - `main + hotfix merge` 와는 달리 별도의 커밋을 만들고 해당 브랜치가 그 커밋을 가리키도록 이동
-    ![](https://git-scm.com/book/en/v2/images/basic-merging-2.png)
+
+    <img src="https://git-scm.com/book/en/v2/images/basic-merging-2.png" width="500">
 
 8. 53번 이슈 브랜치 삭제
    - `git branch -d iss53`

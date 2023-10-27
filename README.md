@@ -2,9 +2,9 @@
 
 ### Resources:
 
-1. Nomad Coders: https://nomadcoders.co/git-for-beginners/lobby
-2. Pro Git Book: https://git-scm.com/book/en/v2
-3. Git/GitHub 안내서: https://subicura.com/git/
+- [Nomad Coders](https://nomadcoders.co/git-for-beginners/lobby)
+- [Pro Git Book](https://git-scm.com/book/en/v2)
+- [Git/GitHub 안내서](https://subicura.com/git/)
 
 ---
 
