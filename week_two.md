@@ -113,8 +113,7 @@ _파일을 수정하고 커밋을 했으면 꼭 푸쉬를 해서 깃헙에 올�
   - 반드시 베이스 저장소에 Pull Request를 넣어야함
 
 **[How to Pull Request?](/pull_request.md)**
-
-**[How to Pull Request?](https://nomadcoders.co/git-for-beginners/lectures/2042)**
+**[Video](https://nomadcoders.co/git-for-beginners/lectures/2042)**
 
 ---
 
