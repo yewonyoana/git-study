@@ -8,7 +8,7 @@
 
 ---
 
-### [Week 1](/week_one.md):
+### [Week 1](/one/week_one.md):
 
 - Git & GitHub
 - Repositories
@@ -17,7 +17,7 @@
 - Branches
 - Branch Conflict
 
-### [Week 2](/week_two.md):
+### [Week 2](/two/week_two.md):
 
 - GitHub
 - Forking
