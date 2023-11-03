@@ -8,9 +8,9 @@ _파일을 수정하고 커밋을 했으면 꼭 푸쉬를 해서 깃헙에 올�
 
   - 저장소의 커밋을 클릭하면 해당 저장소의 수정 기록을 볼 수 있음
 
-      <img src="../imgs/week_two/01.png" width="500">
+      <img src="../imgs/w2/01.png" width="500">
       <br>
-      <img src="../imgs/week_two/02.png" width="500">
+      <img src="../imgs/w2/02.png" width="500">
 
 - 기본 설정으로 README.md (md = markdown) 파일을 읽음
 
@@ -77,7 +77,7 @@ _파일을 수정하고 커밋을 했으면 꼭 푸쉬를 해서 깃헙에 올�
 - 깃헙에 있는 기능
 - Push 권한이 없는 프로젝트 전체를 내 깃헙로 복사하는 것
 
-  <img src="../imgs/week_two/03.png" width="500">
+  <img src="../imgs/w2/03.png" width="500">
 
   - 커밋 히스토리, 브랜치, 등 모든게 다 복사 됨
   - 복사된 저장소를 수정할 수 있음
@@ -93,9 +93,9 @@ _파일을 수정하고 커밋을 했으면 꼭 푸쉬를 해서 깃헙에 올�
 - Fork한 저장소를 깃헙에서 데스크탑으로 복사하는 것
 - 깃헙 데스크탑 이용으로 VSCode에서 작업이 가능해짐
 
-  <img src="../imgs/week_two/05.png" width="500">
+  <img src="../imgs/w2/05.png" width="500">
 
-  <img src="../imgs/week_two/06.png" width="500">
+  <img src="../imgs/w2/06.png" width="500">
 
 ---
 
@@ -103,11 +103,11 @@ _파일을 수정하고 커밋을 했으면 꼭 푸쉬를 해서 깃헙에 올�
 
 - 만약 베이스 저장소에서 수정 사항이 있었다면 최신버전 유지를 위해 fork한 저장소를 업데이트해야 함
   - Fork를 하면 자동적으로 `upstream` 이란 브랜치가 생성되는데 베이스 저장소와 연결되어 있음
-    <img src="../imgs/week_two/04.png" width="500">
+    <img src="../imgs/w2/04.png" width="500">
     1. `upstream` 선택 후 `Fetch origin`을 클릭하여 베이스 저장소의 최신 수정 사항을 받아옴
     2. 내 `main`과 `upstream`를 `Merge`로 병합
     3. 내 저장소에 베이스 저장소의 최신 수정 사항이 반영됨
-   
+
 ---
 
 ### Pull Requests
@@ -124,7 +124,7 @@ _파일을 수정하고 커밋을 했으면 꼭 푸쉬를 해서 깃헙에 올�
 
 - 프로젝트에 생긴 이슈(문제, 버그, 등)를 기록
 
-  <img src="../imgs/week_two/07.png" width="500">
+  <img src="../imgs/w2/07.png" width="500">
 
 - 개발자가 이슈를 고치고 매니저에게 Pull Request를 넣으면서 이슈 번호, 코멘트와 태그를 넣어서 피드백
 - 프로젝트의 매니저가 이슈를 닫을 수 있음

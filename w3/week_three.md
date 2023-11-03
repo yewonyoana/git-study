@@ -6,6 +6,8 @@
 
 ### M, U
 
+<img src="../imgs/w3/01.png" width="250">
+
 - VS Code에서 파일 옆에 M과 U 아이콘들은 무엇인가?
   - M = Modified
     - 파일이 수정 되었을 때

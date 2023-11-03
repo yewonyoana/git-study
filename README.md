@@ -8,7 +8,7 @@
 
 ---
 
-### [Week 1](/one/week_one.md):
+### [Week 1](https://github.com/yewonyoana/git-study/blob/d7aa16ae5e4d46d529292e027934e727de9e4298/w1/week_one.md)
 
 - Git & GitHub
 - Repositories
@@ -17,7 +17,7 @@
 - Branches
 - Branch Conflict
 
-### [Week 2](/two/week_two.md):
+### [Week 2](https://github.com/yewonyoana/git-study/blob/d7aa16ae5e4d46d529292e027934e727de9e4298/w2/week_two.md)
 
 - GitHub
 - Forking
@@ -26,3 +26,14 @@
 - Origin
 - Upstream
 - Issues
+
+### [Week 3](https://github.com/yewonyoana/git-study/blob/d7aa16ae5e4d46d529292e027934e727de9e4298/w3/week_three.md)
+
+- CLI Log
+- Commit
+- Push
+- Checkout
+- Resets
+  - Hard
+  - Soft
+  - Mixed
