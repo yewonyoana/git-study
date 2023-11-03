@@ -27,7 +27,7 @@
 - Upstream
 - Issues
 
-### [Week 3](https://github.com/yewonyoana/git-study/blob/d7aa16ae5e4d46d529292e027934e727de9e4298/w3/week_three.md)
+### [Week 3](w3/week_three.md)
 
 - CLI Log
 - Commit
