@@ -85,7 +85,7 @@
 1. `git log`
 
    - `commit # (HEAD -> main)` = my computer
-   - `commit # (origin/man)` = gitHub repository
+   - `commit # (origin/main)` = gitHub repository
 
      <img src="imgs/commands/01.png" width="500">
 
@@ -101,5 +101,28 @@
 
 ### GIT CHECKOUT
 
-- `git checkout #`
-  - git checkout d7aa16ae5e4d46d529292e027934e727de9e4298
+1. Checking out a past commit:
+
+   - `git checkout #`
+     - git checkout d7aa16ae5e4d46d529292e027934e727de9e4298
+
+2. Checking out the latest commit:
+   - `git checkout main`
+
+---
+
+### RESET (DELETE) COMMIT
+
+1. Reset commit:
+   - `git reset (--hard, ) #`
+     - `#` : `HEAD^`, `HEAD~`, commit #
+2. Push changed commit to Origin:
+   - `git push origin main --force`
+
+#### Hard Reset
+
+- `git reset --hard HEAD^`
+
+#### Soft Reset
+
+#### Mixed Reset

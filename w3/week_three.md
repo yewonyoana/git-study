@@ -43,6 +43,49 @@
 ### HEAD
 
 - 지금 시점에 파일이 있는 위치
-- HEAD의 위치를 변경하여 이전 파일 변경사항을 볼 수 있음
-  - `git checkout #`
-    - git checkout d7aa16ae5e4d46d529292e027934e727de9e4298
+- HEAD의 위치를 변경할 수 있음
+
+  - 과거 커밋 조회
+  - 과거 커밋 변경
+
+---
+
+### CHECKOUT
+
+#### 과거 커밋 조회: `git checkout #`
+
+- `checkout` 은 말 그대로 과거 커밋의 변경사항을 볼 뿐 수정하지는 않음
+  1. 현재 위치
+     <img src="../imgs/w3/02.png" width="500">
+  2. 이전 파일로 변경
+  - git checkout d7aa16ae5e4d46d529292e027934e727de9e4298
+    <img src="../imgs/w3/03.png" width="500">
+  3. 다시 제일 최근 커밋으로 돌아가기
+  - `git checkout main`
+
+---
+
+### RESET
+
+1. `git reset #`
+
+   - `reset` = delete
+   - `#`
+     - `HEAD^`
+       - `^`의 갯수에 따라 몇개의 커밋 뒤로 갈지 정해짐
+       - `HEAD` → 삭제 없음
+       - `HEAD^` → 바로 이전 커밋으로 돌아가서 최근 커밋은 삭제
+     - `HEAD~`
+     - `commit #`
+
+2. `git push origin main --force`
+   - 과것 커밋을 삭제를 했을 때 오리진(깃헙)은 내 컴퓨터 파일보다 한 커밋 앞서 있기 때문에 강제로 푸시를 해줘야 함
+   - 푸시 후 해당 커밋은 내 컴퓨터에서도 오리진(깃헙)에서도 다 삭제 됨
+
+#### Hard Reset
+
+- `git reset --hard #`
+
+#### Soft Reset
+
+#### Mixed Reset
