@@ -1,6 +1,6 @@
 # Week 1
 
-### Git vs. GitHub
+### GIT VS GITHUB
 
 #### Git
 
@@ -14,7 +14,7 @@
 
 ---
 
-### Repositories (Repo, 저장소)
+### REPOSITORIES (Repo, 저장소)
 
 - 깃이 항상 주시하고 있는 폴더
 - **Local** Repository (**로컬** 저장소)
@@ -43,13 +43,13 @@
 
 ---
 
-### Commit (커밋)
+### COMMIT (커밋)
 
 - 저장소에 수정된 작업을 스냅샷으로 남기는 것
 
 ---
 
-### Git Areas (Git Workflow, 작업 환경)
+### GIT AREAS (Git Workflow, 작업 환경)
 
 #### Working Directory (Working Area, Unstaged Area)
 
@@ -84,7 +84,7 @@
 
 ---
 
-### Branch (브랜치)
+### BRANCH (브랜치)
 
 **[Branch Merge 예시](/branch_merge.md)**
 

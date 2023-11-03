@@ -96,3 +96,10 @@
 2. `q`
 
    - exit from `git log`
+
+---
+
+### GIT CHECKOUT
+
+- `git checkout #`
+  - git checkout d7aa16ae5e4d46d529292e027934e727de9e4298
