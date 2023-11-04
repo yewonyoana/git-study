@@ -164,7 +164,7 @@
 
 <img src = "https://velog.velcdn.com/images%2Fnjs04210%2Fpost%2F52dd0ee6-2d56-406f-a4b7-3da19cc36e10%2Fimage.png" width="500px">
 
-### Reset
+#### Reset
 
 - 개발자 본인만 해당 브랜치를 사용할 경우
 - 커밋이 완전히 삭제됨
@@ -173,7 +173,7 @@
 
 <img src = "https://velog.velcdn.com/images%2Fnjs04210%2Fpost%2F9785918a-daeb-453f-a0f1-62a1c93ce02c%2Fimage.png" width="500px">
 
-### Revert
+#### Revert
 
 - `git revert commit#`
 - 코드가 여러 개발자와 공유되어있을 때
@@ -182,3 +182,40 @@
   2. `revert`한 이력을 남기면서 커밋 B로 돌아감
 
 <img src = "https://velog.velcdn.com/images%2Fnjs04210%2Fpost%2Fa9faa0ad-05a6-42d6-8f10-a0cda67ebf22%2Fimage.png" width="500px">
+
+---
+
+### [Stash](https://inpa.tistory.com/entry/GIT-%E2%9A%A1%EF%B8%8F-%EC%BB%A4%EB%B0%8B%ED%95%98%EC%A7%80%EC%95%8A%EA%B3%A0-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EA%B0%84-%EC%9D%B4%EB%8F%99-git-stash)
+
+- 아래에 해당되는 파일을 일시적으로 보관하는 곳
+
+  - Tracked + Modified 파일들
+  - Staging Area에 있는 파일들
+
+- 왜 `Stash`를 하는가?
+  - 파일 수정 중 다른 브랜치로 이동해야하는 경우
+  - `main` 브랜치에서 작업을 해야하는데 다른 브랜치에서 작업하고 있을 경우 `stash`로 저장해서 `main` 브랜치로 넘어와 임시 저장한 내용을 적용
+
+1. 파일 임시 저장: `git stash`
+   - Working directory에서 수정한 파일만 저장
+2. 임시 저장 설명 추가: `git stash save "message"`
+3. 임시 저장한 리스트 조회: `git stash list`
+   <img src = "https://velog.velcdn.com/images%2Fbyeol4001%2Fpost%2F26c6f00b-0845-400a-8537-d19abc325181%2Fimage.png" width="500px">
+4. 가장 최근 stash를 적용: `git stash apply`
+5. 다른 stash 적용: `git stash apply stash@{숫자}`
+6. Staged 상태였던 파일을 다시 Staged 상태까지 복원 (자동으로 해주지 않음): `git stash apply --index`
+7. stash 삭제 (적용 후 리스트에 여전히 남아 있음):
+   - 가장 최근 stash: `git stash drop`
+   - 다른 stash: `git stash drop stashName`
+   - 전체: `git stash clear`
+8. stash 적용 후 삭제:
+
+   - 가장 최근: `git stash pop`
+   - 다른 stash:`git stash pop stash@{숫자}`
+
+9. 새 브랜치에 stash 적용 (생성 브랜치 checkout되며 stash는 삭제 됨): `git stash branch branchName stash@{숫자}`
+   <img src="https://velog.velcdn.com/images%2Fbyeol4001%2Fpost%2F885f4d8d-520a-4ed9-81c4-15e7ccf6761b%2Fimage.png" width="500px">
+10. stash 롤백 (stash 적용한 것을 되돌리고 싶을 때):
+
+    - 가장 최근 stash: `git stash show -p`
+    - 다른 stash: `git stash show -p stash@{숫자}`
