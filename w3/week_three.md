@@ -4,7 +4,7 @@
 
 ---
 
-### M과 U의 차이
+### M VS U
 
 - VS Code에서 파일 옆에 M과 U 아이콘들은 무엇인가?
 
@@ -188,7 +188,7 @@
 
 ---
 
-### [Stash](https://inpa.tistory.com/entry/GIT-%E2%9A%A1%EF%B8%8F-%EC%BB%A4%EB%B0%8B%ED%95%98%EC%A7%80%EC%95%8A%EA%B3%A0-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EA%B0%84-%EC%9D%B4%EB%8F%99-git-stash)
+### [STASH](https://inpa.tistory.com/entry/GIT-%E2%9A%A1%EF%B8%8F-%EC%BB%A4%EB%B0%8B%ED%95%98%EC%A7%80%EC%95%8A%EA%B3%A0-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EA%B0%84-%EC%9D%B4%EB%8F%99-git-stash)
 
 - 아래에 해당되는 파일을 일시적으로 보관하는 곳
 
