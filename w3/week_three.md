@@ -76,6 +76,8 @@
 
 ### RESET
 
+#### 과거 커밋 변경
+
 <img src = "https://velog.velcdn.com/images%2Fsonypark%2Fpost%2F2dc11b3e-d04d-431d-9b53-6ccfd8af0e97%2Fgit-reset-movement.png" width="500px">
 
 1. `git reset #`
@@ -94,7 +96,7 @@
 
 2. `git pull origin main`
 
-   - 원격 저장소과 로컬 저장소의 커밋 히스토리가 다르기 때문에 충돌이 일어남
+   - 원격 저장소(깃헙)는 로컬 저장소 파일보다 삭제된 커밋만큼 앞서 있기 때문에 충돌이 일어남
    - 원하는 수정 사항 선택 후 `merge`가 필요
      1. `Accept Current Change`로 로컬 저장소 파일의 수정 사항을 선택
      2. `git add .`
@@ -104,7 +106,7 @@
    - 하지만 이건 귀찮은 작업이기 때문에...
 
 3. `git push origin main --force`
-   - 원격 저장소(깃헙)는 로컬 저장소 파일보다 삭제된 커밋만큼 앞서 있기 때문에 강제로 푸시를 해줘야 함
+   - 위 순서를 밟지 않고 강제로 원격 저장소로 푸시
    - 푸시 후 해당 커밋은 로컬 저장소에서도 원격 저장소(깃헙)에서도 다 삭제 되고 동일한 커밋 히스토리를 갖게 됨
 
 #### Mixed Reset (복합리셋)
@@ -123,7 +125,7 @@
 #### Soft Reset
 
 - `git reset --soft #`
-  - 선택한 커밋에서의 변경사항들은 **staging area**로 이동되고 파일은 `git commit`하기 전 상태로 돌려놓음
+  - 선택한 커밋에서의 변경사항들은 **staging area**로 이동되고 파일은 **tracked** 상태 유지, 하지만 `git commit`하기 전 상태로 돌려놓음
   - 커밋은 삭제되지만 파일은 유지
 
 ---
@@ -136,52 +138,51 @@
 
 - `git reset 9033` 을 실행하면 `HEAD`가 `main`이라는 통해 간접적으로 커밋을 가리킴
 
-<img src="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/37-2.png?1587009639934" width="500px">
+    <img src="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/37-2.png?1587009639934" width="500px">
 
 #### Checkout
 
-- 과거 특정 커밋에서 새로운 브랜치를 만들 때 보통 `Reset`을 쓰지 않고 `Checkout`을 사용
+- 과거 특정 커밋에서 새로운 브랜치를 만들 때 보통 `Checkout`을 사용
 
   1. `git checkout 9033` 을 실행하면 `HEAD`가 직접적으로 커밋을 가리키는데 이를 `Detached HEAD`라고 부름
+     <img src = "https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/27-3.png?1587009652246" width="500px">
 
-<img src = "https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/27-3.png?1587009652246" width="500px">
+  2. `9033` 에서 브랜치 `premium`을 생성 후 `git checkout premium`을 하면 `Detached HEAD`에서 벗어나 정상적인 상태로 돌아옴 (`git checkout -b premium`하면 브랜치 생성 후 바로 체크아웃 가능)
+     <img src="https://postfiles.pstatic.net/MjAyMDA2MjVfMTc4/MDAxNTkzMDUxMDg2NDM4.0AY3KlQJcP0zISUmOrmZ6GqGXi2HR9qMRoSsnX4v-Bgg.j4eRWfEVDuBEoUByooeVEH9zUwebRAg3W-TPC1Rc1mAg.PNG.codeitofficial/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2020-06-25_%EC%98%A4%EC%A0%84_11.11.07.png?type=w773" width="500px">
 
-2. `9033` 에서 브랜치 `premium`을 생성 후 `git checkout premium`을 하면 `Detached HEAD`에서 벗어나 정상적인 상태로 돌아옴
+  3. 새 커밋을 하면 `premium` 브랜치에서 `main` 브랜치와 다른 작업을 할 수 있음
+     <img src="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/17-6.png?1587009690417" width="500px">
 
-<img src="https://postfiles.pstatic.net/MjAyMDA2MjVfMTc4/MDAxNTkzMDUxMDg2NDM4.0AY3KlQJcP0zISUmOrmZ6GqGXi2HR9qMRoSsnX4v-Bgg.j4eRWfEVDuBEoUByooeVEH9zUwebRAg3W-TPC1Rc1mAg.PNG.codeitofficial/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2020-06-25_%EC%98%A4%EC%A0%84_11.11.07.png?type=w773" width="500px">
-
-3. 새 커밋을 하면 `premium` 브랜치에서 `main` 브랜치와 다른 작업을 할 수 있음
-
-<img src="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/17-6.png?1587009690417" width="500px">
-
-4. `git checkout main`을 하면 `HEAD`가 다시 `main` 브랜치로 이동
-
-<img src ="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/18-7.png?1587009703832" width="500px">
+  4. `git checkout main`을 하면 `HEAD`가 다시 `main` 브랜치로 이동
+     <img src ="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/18-7.png?1587009703832" width="500px">
 
 ---
 
 ### [GIT RESET VS GIT REVERT](https://velog.io/@njs04210/Git-reset%EA%B3%BC-revert-%EC%95%8C%EA%B3%A0-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
 
-<img src = "https://velog.velcdn.com/images%2Fnjs04210%2Fpost%2F52dd0ee6-2d56-406f-a4b7-3da19cc36e10%2Fimage.png" width="500px">
+  <img src = "https://velog.velcdn.com/images%2Fnjs04210%2Fpost%2F52dd0ee6-2d56-406f-a4b7-3da19cc36e10%2Fimage.png" width="500px">
 
 #### Reset
 
 - 개발자 본인만 해당 브랜치를 사용할 경우
 - 커밋이 완전히 삭제됨
+
   1. `git reset --hard a0fvf8`로 `a0fvf8`커밋으로 돌아감
   2. 커밋 히스토리 C와 D는 삭제됨
 
-<img src = "https://velog.velcdn.com/images%2Fnjs04210%2Fpost%2F9785918a-daeb-453f-a0f1-62a1c93ce02c%2Fimage.png" width="500px">
+    <img src = "https://velog.velcdn.com/images%2Fnjs04210%2Fpost%2F9785918a-daeb-453f-a0f1-62a1c93ce02c%2Fimage.png" width="500px">
 
 #### Revert
 
 - `git revert commit#`
 - 코드가 여러 개발자와 공유되어있을 때
 - `revert`는 커밋을 삭제하지 않고 과거 커밋으로 돌아가 새로운 커밋을 생성하여 문제점, `revert`한 이유 등을 기록할 수 있음
-  1. `git revert 5lk4er`로 커밋 C로, `git revert 76sdeb`로 커밋 B로 순차적으로 돌아감
+
+  1. `git revert 5lk4er`로 커밋 C로 돌아가면서 `D'` 커밋 생성, `git revert 76sdeb`로 커밋 B로 돌아가면서 `C'` 커밋 생성
+     - `git revert commit#`로 이전 커밋으로 돌아갈 수 있음
   2. `revert`한 이력을 남기면서 커밋 B로 돌아감
 
-<img src = "https://velog.velcdn.com/images%2Fnjs04210%2Fpost%2Fa9faa0ad-05a6-42d6-8f10-a0cda67ebf22%2Fimage.png" width="500px">
+    <img src = "https://velog.velcdn.com/images%2Fnjs04210%2Fpost%2Fa9faa0ad-05a6-42d6-8f10-a0cda67ebf22%2Fimage.png" width="500px">
 
 ---
 
