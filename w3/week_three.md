@@ -148,12 +148,14 @@
      <img src = "https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/27-3.png?1587009652246" width="500px">
 
   2. `9033` 에서 브랜치 `premium`을 생성 후 `git checkout premium`을 하면 `Detached HEAD`에서 벗어나 정상적인 상태로 돌아옴 (`git checkout -b premium`하면 브랜치 생성 후 바로 체크아웃 가능)
+
      <img src="https://postfiles.pstatic.net/MjAyMDA2MjVfMTc4/MDAxNTkzMDUxMDg2NDM4.0AY3KlQJcP0zISUmOrmZ6GqGXi2HR9qMRoSsnX4v-Bgg.j4eRWfEVDuBEoUByooeVEH9zUwebRAg3W-TPC1Rc1mAg.PNG.codeitofficial/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2020-06-25_%EC%98%A4%EC%A0%84_11.11.07.png?type=w773" width="500px">
 
   3. 새 커밋을 하면 `premium` 브랜치에서 `main` 브랜치와 다른 작업을 할 수 있음
      <img src="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/17-6.png?1587009690417" width="500px">
 
   4. `git checkout main`을 하면 `HEAD`가 다시 `main` 브랜치로 이동
+
      <img src ="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/18-7.png?1587009703832" width="500px">
 
 ---
@@ -201,7 +203,9 @@
    - Working directory에서 수정한 파일만 저장
 2. 임시 저장 설명 추가: `git stash save "message"`
 3. 임시 저장한 리스트 조회: `git stash list`
+
    <img src = "https://velog.velcdn.com/images%2Fbyeol4001%2Fpost%2F26c6f00b-0845-400a-8537-d19abc325181%2Fimage.png" width="500px">
+
 4. 가장 최근 stash를 적용: `git stash apply`
 5. 다른 stash 적용: `git stash apply stash@{숫자}`
 6. Staged 상태였던 파일을 다시 Staged 상태까지 복원 (자동으로 해주지 않음): `git stash apply --index`
