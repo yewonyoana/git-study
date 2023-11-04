@@ -2,7 +2,7 @@
 
 ### LOCAL DIRECTORY INTO GIT REPO
 
-- git init
+- `git init`
 
 ---
 
@@ -60,6 +60,9 @@
 
    - `git commit -a`
 
+4. Amend commit message:
+   - `git commit --amend`
+
 ---
 
 ### PUSH TO GITHUB
@@ -99,6 +102,12 @@
 
 ---
 
+### GIT PULL
+
+- `git pull origin main`
+
+---
+
 ### GIT CHECKOUT
 
 1. Checking out a past commit:
@@ -125,4 +134,14 @@
 
 #### Soft Reset
 
+- `git reset --soft HEAD^`
+
 #### Mixed Reset
+
+- `git reset HEAD^`
+
+---
+
+### REVERT COMMIT
+
+- `git revert commit#`

@@ -24,26 +24,25 @@
 
   1. `git log`
 
-     <img src="../imgs/commands/01.png" width="500">
+     <img src="../imgs/commands/01.png" width="500px">
 
-     - `commit # (HEAD -> main)` = 내 컴퓨터
+     - `commit # (HEAD -> main)` = 로컬 저장소
        - 마지막 커밋은 이전 커밋의 내용들이 다 합쳐져 있음
-     - `commit # (origin/man)` = 깃헙 저장소
+     - `commit # (origin/man)` = 원격 (깃헙) 저장소
 
-      <img src="../imgs/commands/02.png" width="500">
+      <img src="../imgs/commands/02.png" width="500px">
 
-     - `commit # (HEAD -> main, origin/man)` = 내 컴퓨터와 깃헙 저장소가 같은 커밋에 있음
+     - `commit # (HEAD -> main, origin/man)` = 로컬 저장소와 원격 저장소가 같은 커밋에 있음
 
   2. `q`
-
-  - `git log` 에서 탈출하기
+     - `git log` 에서 탈출하기
 
 ---
 
 ### HEAD
 
-- 지금 시점에 파일이 있는 위치
-- HEAD의 위치를 변경할 수 있음
+- "현재 브랜치 마지막 커밋의 스냅샷"
+- HEAD의 위치를 변경하고...
 
   - 과거 커밋 조회
   - 과거 커밋 변경
@@ -55,37 +54,131 @@
 #### 과거 커밋 조회: `git checkout #`
 
 - `checkout` 은 말 그대로 과거 커밋의 변경사항을 볼 뿐 수정하지는 않음
+- `#` 에는 `git log`에서 보이는 커밋 번호를 넣어야함
+
   1. 현재 위치
-     <img src="../imgs/w3/02.png" width="500">
-  2. 이전 파일로 변경
-  - git checkout d7aa16ae5e4d46d529292e027934e727de9e4298
-    <img src="../imgs/w3/03.png" width="500">
-  3. 다시 제일 최근 커밋으로 돌아가기
-  - `git checkout main`
+
+     - 로컬 저장소도 원격 저장소도 제일 최근 커밋에 있음
+
+       <img src="../imgs/w3/02.png" width="500px">
+
+  2. 이전 커밋 조회
+
+     - git checkout d7aa16ae5e4d46d529292e027934e727de9e4298
+
+         <img src="../imgs/w3/03.png" width="500px">
+
+  3. 제일 최근 커밋으로 돌아가기
+
+     - `git checkout main`
 
 ---
 
 ### RESET
 
+<img src = "https://velog.velcdn.com/images%2Fsonypark%2Fpost%2F2dc11b3e-d04d-431d-9b53-6ccfd8af0e97%2Fgit-reset-movement.png" width="500px">
+
 1. `git reset #`
 
-   - `reset` = delete
+   - `reset` = 삭제
    - `#`
      - `HEAD^`
        - `^`의 갯수에 따라 몇개의 커밋 뒤로 갈지 정해짐
-       - `HEAD` → 삭제 없음
-       - `HEAD^` → 바로 이전 커밋으로 돌아가서 최근 커밋은 삭제
+         - `HEAD` → 삭제 없음
+         - `HEAD^` → 바로 이전 커밋으로 돌아감
      - `HEAD~`
+       - 취소할 커밋 수
+       - `HEAD~3` → 최근 커밋에서 세번째 커밋으로 돌아감
      - `commit #`
+       - `git log`에서 조회
 
-2. `git push origin main --force`
-   - 과것 커밋을 삭제를 했을 때 오리진(깃헙)은 내 컴퓨터 파일보다 한 커밋 앞서 있기 때문에 강제로 푸시를 해줘야 함
-   - 푸시 후 해당 커밋은 내 컴퓨터에서도 오리진(깃헙)에서도 다 삭제 됨
+2. `git pull origin main`
+
+   - 원격 저장소과 로컬 저장소의 커밋 히스토리가 다르기 때문에 충돌이 일어남
+   - 원하는 수정 사항 선택 후 `merge`가 필요
+     1. `Accept Current Change`로 로컬 저장소 파일의 수정 사항을 선택
+     2. `git add .`
+     3. `git commit -m "message"`
+     4. `git push`
+     5. 원격 저장소에서 과거 커밋은 삭제 되고 로컬 저장소와 동일한 커밋 히스토리를 갖게 됨
+   - 하지만 이건 귀찮은 작업이기 때문에...
+
+3. `git push origin main --force`
+   - 원격 저장소(깃헙)는 로컬 저장소 파일보다 삭제된 커밋만큼 앞서 있기 때문에 강제로 푸시를 해줘야 함
+   - 푸시 후 해당 커밋은 로컬 저장소에서도 원격 저장소(깃헙)에서도 다 삭제 되고 동일한 커밋 히스토리를 갖게 됨
+
+#### Mixed Reset (복합리셋)
+
+- `git reset #`
+
+  - 디폴트 리셋
+  - 선택된 커밋에서의 변경사항들은 **working directory(unstaged, 작업영역)** 로 이동되고 파일은 **untracked** 상태로 변경 됨 (`git add` 하기 전 상태)
+  - 커밋은 삭제되지만 파일은 유지
 
 #### Hard Reset
 
 - `git reset --hard #`
+  - 최신 커밋들과 파일을 완전히 삭제하고 완전히 과거로 돌아가는 것
 
 #### Soft Reset
 
-#### Mixed Reset
+- `git reset --soft #`
+  - 선택한 커밋에서의 변경사항들은 **staging area**로 이동되고 파일은 `git commit`하기 전 상태로 돌려놓음
+  - 커밋은 삭제되지만 파일은 유지
+
+---
+
+### [GIT RESET VS GIT CHECKOUT](https://blog.naver.com/codeitofficial/222011693376)
+
+<img src="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/46-1.png?1587009625701" width="500px">
+
+#### Reset
+
+- `git reset 9033` 을 실행하면 `HEAD`가 `main`이라는 통해 간접적으로 커밋을 가리킴
+
+<img src="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/37-2.png?1587009639934" width="500px">
+
+#### Checkout
+
+- 과거 특정 커밋에서 새로운 브랜치를 만들 때 보통 `Reset`을 쓰지 않고 `Checkout`을 사용
+
+  1. `git checkout 9033` 을 실행하면 `HEAD`가 직접적으로 커밋을 가리키는데 이를 `Detached HEAD`라고 부름
+
+<img src = "https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/27-3.png?1587009652246" width="500px">
+
+2. `9033` 에서 브랜치 `premium`을 생성 후 `git checkout premium`을 하면 `Detached HEAD`에서 벗어나 정상적인 상태로 돌아옴
+
+<img src="https://postfiles.pstatic.net/MjAyMDA2MjVfMTc4/MDAxNTkzMDUxMDg2NDM4.0AY3KlQJcP0zISUmOrmZ6GqGXi2HR9qMRoSsnX4v-Bgg.j4eRWfEVDuBEoUByooeVEH9zUwebRAg3W-TPC1Rc1mAg.PNG.codeitofficial/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2020-06-25_%EC%98%A4%EC%A0%84_11.11.07.png?type=w773" width="500px">
+
+3. 새 커밋을 하면 `premium` 브랜치에서 `main` 브랜치와 다른 작업을 할 수 있음
+
+<img src="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/17-6.png?1587009690417" width="500px">
+
+4. `git checkout main`을 하면 `HEAD`가 다시 `main` 브랜치로 이동
+
+<img src ="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/18-7.png?1587009703832" width="500px">
+
+---
+
+### [GIT RESET VS GIT REVERT](https://velog.io/@njs04210/Git-reset%EA%B3%BC-revert-%EC%95%8C%EA%B3%A0-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
+
+<img src = "https://velog.velcdn.com/images%2Fnjs04210%2Fpost%2F52dd0ee6-2d56-406f-a4b7-3da19cc36e10%2Fimage.png" width="500px">
+
+### Reset
+
+- 개발자 본인만 해당 브랜치를 사용할 경우
+- 커밋이 완전히 삭제됨
+  1. `git reset --hard a0fvf8`로 `a0fvf8`커밋으로 돌아감
+  2. 커밋 히스토리 C와 D는 삭제됨
+
+<img src = "https://velog.velcdn.com/images%2Fnjs04210%2Fpost%2F9785918a-daeb-453f-a0f1-62a1c93ce02c%2Fimage.png" width="500px">
+
+### Revert
+
+- `git revert commit#`
+- 코드가 여러 개발자와 공유되어있을 때
+- `revert`는 커밋을 삭제하지 않고 과거 커밋으로 돌아가 새로운 커밋을 생성하여 문제점, `revert`한 이유 등을 기록할 수 있음
+  1. `git revert 5lk4er`로 커밋 C로, `git revert 76sdeb`로 커밋 B로 순차적으로 돌아감
+  2. `revert`한 이력을 남기면서 커밋 B로 돌아감
+
+<img src = "https://velog.velcdn.com/images%2Fnjs04210%2Fpost%2Fa9faa0ad-05a6-42d6-8f10-a0cda67ebf22%2Fimage.png" width="500px">

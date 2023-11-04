@@ -66,7 +66,7 @@
 
   **[라이프사이클](https://ordo.tistory.com/133)**
 
-  <img src="https://git-scm.com/book/en/v2/images/lifecycle.png" width="500">
+  <img src="https://git-scm.com/book/en/v2/images/lifecycle.png" width="500px">
 
   1. Untracked 파일을 git add 명령어로 Staged 상태로 만듬
   2. Tracked 파일을 수정하면 Modified
