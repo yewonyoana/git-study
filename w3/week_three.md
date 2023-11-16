@@ -144,19 +144,21 @@
 
 - 과거 특정 커밋에서 새로운 브랜치를 만들 때 보통 `Checkout`을 사용
 
-  1. `git checkout 9033` 을 실행하면 `HEAD`가 직접적으로 커밋을 가리키는데 이를 `Detached HEAD`라고 부름
-     <img src = "https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/27-3.png?1587009652246" width="500px">
+  1.  `git checkout 9033` 을 실행하면 `HEAD`가 직접적으로 커밋을 가리키는데 이를 `Detached HEAD`라고 부름
+      <img src = "https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/27-3.png?1587009652246" width="500px">
 
-  2. `9033` 에서 브랜치 `premium`을 생성 후 `git checkout premium`을 하면 `Detached HEAD`에서 벗어나 정상적인 상태로 돌아옴 (`git checkout -b premium`하면 브랜치 생성 후 바로 체크아웃 가능)
+  2.  `9033` 에서 브랜치 `premium`을 생성 후 `git checkout premium`을 하면 `Detached HEAD`에서 벗어나 정상적인 상태로 돌아옴 (`git checkout -b premium`하면 브랜치 생성 후 바로 체크아웃 가능)
 
-     <img src="https://postfiles.pstatic.net/MjAyMDA2MjVfMTc4/MDAxNTkzMDUxMDg2NDM4.0AY3KlQJcP0zISUmOrmZ6GqGXi2HR9qMRoSsnX4v-Bgg.j4eRWfEVDuBEoUByooeVEH9zUwebRAg3W-TPC1Rc1mAg.PNG.codeitofficial/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2020-06-25_%EC%98%A4%EC%A0%84_11.11.07.png?type=w773" width="500px">
+      <img src="https://postfiles.pstatic.net/MjAyMDA2MjVfMTc4/MDAxNTkzMDUxMDg2NDM4.0AY3KlQJcP0zISUmOrmZ6GqGXi2HR9qMRoSsnX4v-Bgg.j4eRWfEVDuBEoUByooeVEH9zUwebRAg3W-TPC1Rc1mAg.PNG.codeitofficial/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2020-06-25_%EC%98%A4%EC%A0%84_11.11.07.png?type=w773" width="500px">
 
-  3. 새 커밋을 하면 `premium` 브랜치에서 `main` 브랜치와 다른 작업을 할 수 있음
-     <img src="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/17-6.png?1587009690417" width="500px">
+          ➡️ `git checkout 9033 -b premium`을 하면 9033을 `checkout`하면서 `premium` 브랜치를 생성해 해당 브랜치를 바로 `checkout` 함
 
-  4. `git checkout main`을 하면 `HEAD`가 다시 `main` 브랜치로 이동
+  3.  새 커밋을 하면 `premium` 브랜치에서 `main` 브랜치와 다른 작업을 할 수 있음
+      <img src="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/17-6.png?1587009690417" width="500px">
 
-     <img src ="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/18-7.png?1587009703832" width="500px">
+  4.  `git checkout main`을 하면 `HEAD`가 다시 `main` 브랜치로 이동
+
+      <img src ="https://codeit-images.s3.ap-northeast-2.amazonaws.com/images/5e345231f974fb2074b368c1/18-7.png?1587009703832" width="500px">
 
 ---
 

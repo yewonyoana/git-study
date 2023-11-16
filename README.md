@@ -33,7 +33,18 @@
 - Commit
 - Push
 - Checkout
+  - Commit
 - Resets
   - Hard
   - Soft
   - Mixed
+- Reset vs. Checkout
+- Reset vs. Revert
+- Stash
+
+### [Week 4](w4/week_four.md)
+
+- Ammend Commits
+- Ignoring Files
+- Origins
+- Clone

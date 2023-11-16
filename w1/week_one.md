@@ -114,3 +114,7 @@
     1.  Accept Current Change: main에서 수정한 부분을 킵
     2.  Accept Incoming Change: 합치려는 브랜치에서 수정한 부분을 킵
     3.  Accept Both Changes: 모든 수정을 킵
+
+#### 4. Delete Branch
+
+- `git branch -d branch_name`
