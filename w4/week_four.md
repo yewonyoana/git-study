@@ -90,8 +90,11 @@
 
 - `git rebase -i hash/HEAD`
 - 여러개의 커밋을 하나의 커밋으로 변경
+
   - 보통 브랜치 병합 혹은 팀 협업 PR를 할 때 사용
 
-#### How to Sqaush?
+    <img src="https://postfiles.pstatic.net/MjAyMzAxMDlfNTEg/MDAxNjczMjU3MDg2NTAz.ztvK4emfVJTtNMD7gYsF61jjPRAYjqBHd3n17Ssik2wg.MYf4XMvJTBC51X1_sWwgiwNW0qjVIRVt5WMN0WzDQ80g.PNG.worua97/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2023-01-09_18.38.04.png?type=w773" width="500px">
+
+#### How to Squash?
 
 1. Rebase
