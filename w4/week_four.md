@@ -65,7 +65,7 @@
 
 ### [CHERRY PICK](https://mine-it-record.tistory.com/650)
 
-- `git cherry-pick hah`
+- `git cherry-pick hash`
   - `git cherry-pick 8de44fe1a89b63b46c0c527439d0e4ffcd7b9ff5`
 - 다른 브랜치에서 필요한 커밋을 골라서 복사해오는 것
 
@@ -78,13 +78,13 @@
 - 반영되지 않은 커밋 복원
   - 실수로 풀리퀘를 병합하기 전에 닫아버리면 해당 커밋을 체리픽으로 다시 살림
 - 충돌
-- 작업 중이던 파일과 체리픽해서 가져오는 커밋이 동일할 경우
-  - 충돌 해결
-    1. 충돌 코드 수정
-    2. `git add path`로 수정된 코드 커밋
-    3. `git cherry-pick --continue`로 충돌로 인해 중지 되었던 체리픽 재진행
-  - 중단
-    - `git cherry-pick --abort`로 체리픽을 중단하고 이전 상태로 돌아가기
+  - 작업 중이던 파일과 체리픽해서 가져오는 커밋이 동일할 경우
+    1. 충돌 해결
+       1. 충돌 코드 수정
+       2. `git add path`로 수정된 코드 커밋
+       3. `git cherry-pick --continue`로 충돌로 인해 중지 되었던 체리픽 재진행
+    2. 중단
+       - `git cherry-pick --abort`로 체리픽을 중단하고 이전 상태로 돌아가기
 
 ### SQUASH
 
